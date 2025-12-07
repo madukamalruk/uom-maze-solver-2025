@@ -1,4 +1,3 @@
-// Ensure Arduino core types are available to static analysis
 #include <Arduino.h>
 
 // Motor driver pin assignments

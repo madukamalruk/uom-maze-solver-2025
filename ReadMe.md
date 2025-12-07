@@ -40,13 +40,7 @@ This robot complies with the **Standard Class Micromouse Specifications** define
 ### 🔹 **1. PID Wall Following**
 Maintains robot centering inside the maze corridor by minimizing the error between left & right distance sensors.
 
-### 🔹 **2. Odometry**
-Used to:
-- Execute accurate **90°** left/right turns  
-- Perform **180°** dead-end turns  
-- Maintain straight movement over long cells  
-
-### 🔹 **3. Flood-Fill Maze Solving**
+### 🔹 **2. Flood-Fill Maze Solving**
 The maze is treated as a grid of 16×16 nodes.
 
 Algorithm steps:
@@ -56,10 +50,19 @@ Algorithm steps:
 4. Move to the adjacent cell with the *lowest distance value*  
 5. Once the shortest path is fully mapped → perform **speed-run mode**
 
-### 🔹 **4. Memory Optimization**
+### 🔹 **3. Memory Optimization**
 - Wall data stored in **bitfields**  
 - Fits within Arduino Uno’s **2 KB SRAM**
 
 ---
 
 
+# Team Name: G16
+Members:
+- Maduka Malruk
+- Narada Madushanka
+- Sasidu Madusanka
+
+# ❤️ Acknowledgments
+-Department of Electrical Engineering – University of Moratuwa
+-Competition organizers, lab instructors, and mentors
