@@ -19,49 +19,114 @@ This project implements a fully autonomous maze-solving robot using:
 
 ---
 
-# 🛠️ **Hardware Architecture**
-
-This robot complies with the **Standard Class Micromouse Specifications** defined in the UoM competition guidelines.
-
-| Component | Specification | Purpose |
-|----------|--------------|---------|
-| **Microcontroller** | Arduino Uno (ATmega328P) | Core processing & control |
-| **Sensors** | 3× Ultrasonic (HC-SR04), 1× IR Sensor | Wall detection, finish tile detection |
-| **Actuators** | 12V DC Gear Motors | Differential drive locomotion |
-| **Motor Driver** | L298N / TB6612FNG | H-bridge speed & direction control |
-| **Power** | 3S Li-Po (≤12V) | Main power source |
-| **Chassis** | Custom 3D-printed (PLA), 18×18×18 cm limit | Structural assembly |
+# 🌀 G16 – MicroMouse / Maze Solver Challenge 2025
+### Department of Electrical Engineering – University of Moratuwa
 
 ---
 
-# 🔧 **Software & Algorithms**
+## 📌 Project Overview
 
-### 🔹 **1. PID Wall Following**
-Maintains robot centering inside the maze corridor by minimizing the error between left & right distance sensors.
+This repository contains the complete work of **Team G16** for the UoM Intra-Department MicroMouse / Maze Solver Challenge 2025.
 
-### 🔹 **2. Flood-Fill Maze Solving**
-The maze is treated as a grid of 16×16 nodes.
+The challenge required building an autonomous maze-solving robot capable of navigating a $9 \times 9$ grid using minimal sensing hardware and real-time decision-making. The robot was designed to interpret its surroundings using only **ultrasonic sensors** and an **IR finish detector**, combined with optimized motor control.
 
-Algorithm steps:
-1. Initialize distances from all cells to the goal  
-2. Explore and add walls to memory  
-3. Recalculate (flood) distances whenever new walls are detected  
-4. Move to the adjacent cell with the *lowest distance value*  
-5. Once the shortest path is fully mapped → perform **speed-run mode**
 
-### 🔹 **3. Memory Optimization**
-- Wall data stored in **bitfields**  
-- Fits within Arduino Uno’s **2 KB SRAM**
+
+> **Key Constraint:** With no encoders and no advanced feedback systems, the project demanded a deep application of fundamental engineering concepts, algorithmic creativity, and extensive tuning.
 
 ---
 
+## 🧩 Team G16
 
-# Team Name: G16
-Members:
-- Maduka Malruk
-- Narada Madushanka
-- Sasidu Madusanka
+| Name | 
+| :--- |
+| **Maduka Malruk** | 
+| **Narada Madushanka** |
+| **Sasidu Madusanka** |
 
-# ❤️ Acknowledgments
-- Department of Electrical Engineering – University of Moratuwa
-- Competition organizers, lab instructors, and mentors
+---
+
+## 🎯 Competition Objective
+
+The goal was to build a completely autonomous robot that:
+* Navigates a maze built from $22.5\text{cm} \times 22.5\text{cm}$ cells.
+* Detects walls in real-time.
+* Finds the finish tile (white floor).
+* Returns to start and optimizes path over multiple runs.
+* Achieves the **shortest completion time** within 3 official trials.
+
+---
+
+## 🛠️ Hardware Components
+
+All components were provided by the Department of Electrical Engineering.
+
+* **Microcontroller:** Arduino Uno
+* **Locomotion:** DC Motors ($\times 2$) via Differential Drive
+* **Driver:** Motor Driver (H-Bridge)
+* **Sensors:**
+    * Ultrasonic Sensors ($\times 3$) – Wall detection
+    * IR Sensor ($\times 1$) – Finish tile detection
+* **Power:** Voltage Regulator
+* **Chassis:** Custom 3D-Printed design with Caster Wheel
+* **Misc:** Buzzer, standard wires, connectors & breadboard
+
+---
+
+## 🧠 Software & Control Algorithms
+
+### 1. Wall Detection
+Real-time distance measurement using 3 ultrasonic sensors. The logic filters false echoes and noise to accurately map immediate surroundings.
+
+
+
+### 2. Movement & Motor Control
+* Speed and direction control via PWM.
+* Calibrated turn angles (Left / Right / $180^\circ$).
+* Drift correction for straight-line movement.
+
+### 3. Maze Navigation Logic
+* Cell-by-cell traversal.
+* Soft-coded **Left / Forward / Right** decision priority.
+* Dead-end recovery logic.
+* Loop prevention using state flags.
+
+### 4. Finish Tile Detection
+Uses an IR sensor to detect the reflective white tile at the goal.
+
+### 5. Path Optimization
+The robot is designed to attempt multiple runs, refining its route to reduce unnecessary turns and backtracking.
+
+---
+
+## 🧱 Mechanical & Electronic Design
+
+### 🔩 Chassis
+* Fully 3D-printed using UoM lab facilities.
+* Supports modular mounting for sensors.
+* Lightweight and reinforced for stability.
+
+
+
+### ⚡ Circuit Integration
+* Clean routing for sensor signals.
+* Power system regulated for stable motor performance.
+* Noise minimized to avoid false sensor readings.
+
+---
+### 🏁 What We LearnedReal
+- world sensors behave nothing like simulations.
+- Motor tuning without encoders is extremely challenging.
+- Small changes in geometry drastically affect movement.
+- Simple logic, when tuned well, beats overly complex algorithms.
+- Teamwork makes debugging $100\times$ easier.
+### 👏 Acknowledgment
+- A heartfelt thank-you to:Dr. Thamidu Naveen-Department of Electrical Engineering 
+- University of Moratuwa For organizing this highly educational and competitive event and providing all necessary guidance and resources.
+
+### 📬 Connect With Us
+- Feel free to reach out or follow our work:
+- LinkedIn Post: (Insert link)
+- Facebook Album: https://www.facebook.com/share/p/17TBAiJgme/
+
+### ⭐ If you found this repository useful, consider giving it a star!
