@@ -3,8 +3,7 @@
 #include <math.h>
 
 // ---------------------------
-// Pin definitions (match `Final_code.ino`)
-// Use individual guards to avoid accidental redefinition.
+// Pin definitions 
 // ---------------------------
 #ifndef ENA
 #define ENA 6
