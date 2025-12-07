@@ -13,8 +13,7 @@ Maze solving is a world-recognized robotics challenge that originated in the lat
 
 This project implements a fully autonomous maze-solving robot using:
 - Arduino Uno (ATmega328P)  
-- PID-based wall following  
-- Precise odometry for turns  
+- PID-based wall following   
 - Flood-fill path planning  
 - A 3D-printed chassis designed in the UoM Department of Electrical Engineering  
 
@@ -64,5 +63,5 @@ Members:
 - Sasidu Madusanka
 
 # ❤️ Acknowledgments
--Department of Electrical Engineering – University of Moratuwa
--Competition organizers, lab instructors, and mentors
+- Department of Electrical Engineering – University of Moratuwa
+- Competition organizers, lab instructors, and mentors
