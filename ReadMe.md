@@ -38,11 +38,9 @@ The challenge required building an autonomous maze-solving robot capable of navi
 
 ## 🧩 Team G16
 
-| Name | 
-| :--- |
-| **Maduka Malruk** | 
-| **Narada Madushanka** |
-| **Sasidu Madusanka** |
+- **Maduka Malruk** 
+- **Narada Madushanka** 
+- **Sasidu Madusanka** 
 
 ---
 
